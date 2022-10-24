@@ -21,7 +21,7 @@ func (s *Server) Run(port string, handler http.Handler) error {
 		ReadTimeout:    10 * time.Second,
 		WriteTimeout:   10 * time.Second,
 	}
-	logrus.Info("server start at port: ", s.httpServer.Addr)
+	logrus.Info("server start at port ", s.httpServer.Addr)
 	return s.httpServer.ListenAndServe()
 }
 

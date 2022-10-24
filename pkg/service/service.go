@@ -1,8 +1,12 @@
 package service
 
-import "github.com/AndreyDodonov/machclub_back/pkg/repository"
+import (
+	"github.com/AndreyDodonov/machclub_back/pkg/models"
+	"github.com/AndreyDodonov/machclub_back/pkg/repository"
+)
 
 type Authorization interface {
+	CreateUser(user models.User) (int, error)
 }
 
 type News interface {
@@ -26,5 +30,7 @@ type Service struct {
 }
 
 func NewService(rep *repository.Repository) *Service {
-	return &Service{}
+	return &Service{
+		Authorization: NewAuthService(rep.Authorization),
+	}
 }

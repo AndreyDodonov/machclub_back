@@ -7,6 +7,7 @@ import (
 	"github.com/AndreyDodonov/machclub_back/pkg/handler"
 	"github.com/AndreyDodonov/machclub_back/pkg/repository"
 	"github.com/AndreyDodonov/machclub_back/pkg/service"
+	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 
 	"github.com/joho/godotenv"
@@ -16,6 +17,8 @@ import (
 
 func main() {
 //	logrus.SetFormatter(new(logrus.JSONFormatter))
+
+	gin.SetMode(gin.ReleaseMode) // release mode. For debug mode comment this line
 
 	if err := initConfig(); err != nil {
 		logrus.Fatalf("error in initialization configs: %s", err.Error())
