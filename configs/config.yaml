@@ -2,7 +2,6 @@ port: "8080"
 
 db:
   username: "postgres"
-  password: "Cain-666"
   host: "localhost"
   port: "5432"
   dbname: "machclub_dev"

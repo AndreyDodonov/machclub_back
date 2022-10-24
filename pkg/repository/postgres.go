@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/jmoiron/sqlx"
+	"github.com/sirupsen/logrus"
 )
 
 type Config struct {
@@ -26,6 +27,6 @@ func NewPostgresDB(cfg Config) (*sqlx.DB, error) {
 	if err != nil {
 		return nil, err
 	}
-
+	logrus.Info("Database is connected at port: ", cfg.Port)
 	return db, nil
 }
