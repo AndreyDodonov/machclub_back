@@ -5,6 +5,7 @@ import (
 
 	"github.com/AndreyDodonov/machclub_back/pkg/models"
 	"github.com/jmoiron/sqlx"
+	//"github.com/pelletier/go-toml/query"
 )
 
 type AuthPostgres struct {
@@ -23,4 +24,11 @@ func (r *AuthPostgres) CreateUser(user models.User) (int, error) {
 		return 0, err
 	}
 	return id, nil
+}
+
+func (r *AuthPostgres) GetUser(email, password string) (models.User, error) {
+	var user models.User
+	query := fmt.Sprintf("SELECT id FROM %s WHERE email=$1 AND password_hash=$2", usersTable)
+	err := r.db.Get(&user, query, email, password)
+	return user, err
 }

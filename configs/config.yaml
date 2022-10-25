@@ -6,3 +6,6 @@ db:
   port: "5432"
   dbname: "machclub_dev"
   sslmode: "disable"
+
+token:
+  time: 12

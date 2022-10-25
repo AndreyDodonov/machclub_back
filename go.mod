@@ -10,7 +10,10 @@ require (
 
 require github.com/joho/godotenv v1.4.0
 
-require github.com/sirupsen/logrus v1.9.0 // indirect
+require (
+	github.com/golang-jwt/jwt/v4 v4.4.2 // indirect
+	github.com/sirupsen/logrus v1.9.0 // indirect
+)
 
 require (
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
