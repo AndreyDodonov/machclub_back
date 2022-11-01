@@ -6,12 +6,21 @@ import (
 )
 
 type Authorization interface {
+	// создать пользователя
 	CreateUser(user models.User) (int, error)
+	// сгенерировать токен
 	GenerateToken(email, password string) (string, error)
-	ParseToken(token string	) (int, error)
+	// распарсить токен
+	ParseToken(token string) (int, error)
 }
 
 type News interface {
+	// создать новость
+	CreateNews(news models.News) (int, error)
+	// получить все новости
+	getAllNews() ([]models.News, error)
+	// получить одну новость по id
+	getNewsById(newsId int) (models.News, error)
 }
 
 type NewsItem interface {

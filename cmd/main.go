@@ -16,7 +16,7 @@ import (
 )
 
 func main() {
-//	logrus.SetFormatter(new(logrus.JSONFormatter))
+	//	logrus.SetFormatter(new(logrus.JSONFormatter))
 
 	gin.SetMode(gin.ReleaseMode) // release mode. For debug mode comment this line
 

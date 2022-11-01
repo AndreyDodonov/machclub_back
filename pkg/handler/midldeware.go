@@ -12,6 +12,7 @@ const (
 	userCtx = "userId"
 )
 
+// мидлвейр авторизации
 func (h *Handler) userIdentity(c *gin.Context) {
 	header := c.GetHeader(authorizationHeader)
 	if header == "" {

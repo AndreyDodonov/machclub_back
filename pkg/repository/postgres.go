@@ -1,3 +1,6 @@
+/**
+ * настройки и запуск базы данных
+ */
 package repository
 
 import (
